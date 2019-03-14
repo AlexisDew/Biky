@@ -9,12 +9,16 @@ gem 'puma'
 gem 'rails', '5.2.2.1'
 gem 'redis'
 
+gem 'pg_search'
+
 gem 'autoprefixer-rails'
+gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -26,5 +30,5 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'dotenv-rails'
+  # gem 'dotenv-rails'
 end
