@@ -1,0 +1,26 @@
+/* Your banner CSS file */
+.banner {
+  height: calc(100vh - (64px/2));
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  color: white;
+  align-items: center; /*to align vert */
+  justify-content: center; /*to align hor */
+}
+
+.banner p {
+  margin-top: 16px;
+  margin-bottom: 80px;
+  font-family: 'Rubik';
+  font-size: 24px;
+}
+
+.banner-gradient-image {
+  background-image:
+  // linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
+  linear-gradient(180deg, rgba(0, 59, 147, 0.4) 0%, rgba(0, 59, 147, 0.1) 100%),
+  url('https://cdn.shopify.com/s/files/1/2543/3980/collections/hands-on-motorcycle_4460x4460_5e752a73-7ee5-44f3-85be-79631bfdc0cb_1800x.jpg?v=1512909546');
+  background-size: cover;
+  background-position: center;
+}
