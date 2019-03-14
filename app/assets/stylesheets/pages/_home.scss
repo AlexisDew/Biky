@@ -1,1 +1,57 @@
-// Specific CSS for your home-page
+body {
+  background-color: $white-biky;
+}
+
+.insurance-container {
+  margin-top: 80px;
+}
+
+.insurance-tag {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: $white-biky;
+  position: absolute;
+  border-radius: 10px;
+  width: 248px;
+  height: 64px;
+  left: calc(100vw/2 - 248px/2);
+  top: calc(100vh - 64px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  img {
+    width: 48px;
+    height: 48px;
+  }
+  p {
+    margin: 0;
+    padding-left: 8px;
+    font-style: italic;
+    font-weight: 200;
+    line-height: normal;
+    color: $gray-3-biky;
+    font-size: 14px;
+  }
+}
+
+.proposal {
+  text-align: center;
+  span {
+    color: $blue-biky;
+    font-weight: bold;
+  }
+}
+
+.proposal-icon {
+  display: inline-block;
+  background-color: $white-2-biky;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  position: relative;
+  img {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+  }
+}
