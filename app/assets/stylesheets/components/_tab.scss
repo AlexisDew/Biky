@@ -4,6 +4,11 @@
   width: 70%;
 }
 
+.authentication {
+  min-height: 100vh;
+  padding-bottom: 51px; // height of the footer
+}
+
 .authentication-tabs {
   display: flex;
   align-items: center;
