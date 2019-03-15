@@ -1,4 +1,6 @@
-<h2>Log in</h2>
+<%= render "devise/shared/links" %>
+
+<h2>Connectez-vous à votre compte</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -9,12 +11,15 @@
     <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <p class='thin'>Mot de passe oublié ? <%= link_to('Le retrouver', new_password_path(resource_name))  %></p>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="form-actions text-center">
+    <%= f.button :submit, "Se connecter", class: 'btn btn-primary-biky' %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class='text-center'>
+  <br>
+  <p class='thin smallest'>Vous n'avez pas encore de compte sur Biky ? <%= link_to('Créer un compte', new_registration_path(resource_name))  %></p>
+</div>

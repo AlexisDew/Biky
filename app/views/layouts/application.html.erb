@@ -11,7 +11,11 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <% if devise_controller? %>
+        <%= render 'layouts/devise' %>
+    <% else %>
+        <%= yield %>
+    <% end %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

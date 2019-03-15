@@ -1,0 +1,20 @@
+.authentication-footer {
+  border-top: 1px solid $gray-biky;
+  margin-bottom: 0;
+  position: absolute;
+  display: flex;
+  width:  calc(100% - 75px);
+  justify-content: space-between;
+  bottom: 0;
+  left: 15px;
+  margin: 0 24px;
+  padding: 16px 16px 0px 16px;
+}
+
+.authentication-footer-copyright {
+  width: 40%;
+}
+
+.authentication-footer-links {
+  width: 60%;
+}

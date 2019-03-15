@@ -8,9 +8,54 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Your CSS partials
+// Components
 @import "components/index";
 @import "components/banner";
 @import "components/footer";
 @import "components/button";
+@import "components/tab";
+
+// Pages
 @import "pages/index";
+
+
+
+
+
+
+// Used in many pages
+body {
+  background-color: $white-biky;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.logo-biky-text {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 48px;
+  text-align: justify;
+  color: $blue-3-biky;
+  z-index: 1;
+  position: absolute;
+  left: 24px;
+  top: 16px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.thin {
+  font-weight: 300;
+  color: $gray-3-biky;
+}
+
+.smallest {
+  font-size: 12px;
+}

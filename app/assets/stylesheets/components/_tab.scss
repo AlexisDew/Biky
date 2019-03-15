@@ -1,0 +1,42 @@
+.authentication-form {
+  margin-top: 180px;
+  margin-left: 15%;
+  width: 70%;
+}
+
+.authentication-tabs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.authentication-tab {
+  padding: 5px 25px;
+  text-decoration: none;
+  color: $gray-3-biky;
+  border-bottom: 1px solid $gray-3-biky;
+  transition: color 0.3s ease;
+  width: 50%;
+}
+
+.tab:hover {
+  color: $blue-biky;
+}
+
+.active {
+  position: relative;
+  color: $blue-biky;
+  // border-bottom: 5px solid $blue-biky;
+}
+
+.active:after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 3px;
+  content: "";
+  background: $blue-biky;
+}
