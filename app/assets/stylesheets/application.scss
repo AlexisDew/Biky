@@ -19,7 +19,29 @@
 @import "pages/index";
 
 
+///////////////////
 
+@keyframes play72 {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -57600px 0px;
+  }
+}
+.shapeshifter {
+  animation-duration: 1200ms;
+  animation-timing-function: steps(72);
+  width: 800px;
+  height: 800px;
+  transform: scale(0.32);
+  background-repeat: no-repeat;
+}
+.shapeshifter.play {
+  animation-name: play72;
+}
+
+///////////////////
 
 
 
@@ -38,13 +60,28 @@ body {
   font-style: normal;
   font-weight: bold;
   line-height: normal;
-  font-size: 48px;
   text-align: justify;
   color: $blue-3-biky;
+}
+
+.logo-biky-text-top-left {
+  font-size: 48px;
   z-index: 1;
   position: absolute;
   left: 24px;
   top: 16px;
+}
+
+.logo-biky-title {
+  font-size: 100px;
+  display: inline-block;
+}
+
+
+.title-logo-animated {
+  // height: 300px;
+  // padding: 0;
+  // margin: 0;
 }
 
 a:hover {
