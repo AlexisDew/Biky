@@ -11,6 +11,10 @@ gem 'redis'
 
 gem 'pg_search'
 
+gem 'rest-client', '~> 1.8'
+gem 'json'
+gem 'nokogiri', '~> 1.6', '>= 1.6.6.2'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.6.1'
