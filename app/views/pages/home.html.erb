@@ -11,21 +11,19 @@
   <div class="banner-content">
     <%= image_tag asset_path('logo_text_white.png'), alt: 'biky logo', width: '40%' %>
     <p>Premier site de location de 2 roues entre particuliers</p>
-    <a href="#" class="btn btn-primary-biky">Comment ça marche ?</a>
+    <!-- <a href="#" class="btn btn-primary-biky">Comment ça marche ?</a> -->
+    <% if user_signed_in? %>
+       <li>
+          <%= link_to('Deconexion', destroy_user_session_path, method: :delete, class: 'btn btn-primary-biky') %>
+       </li>
+    <% else %>
+       <li>
+          <%= link_to('Se connecter', new_user_session_path, class: 'btn btn-primary-biky')  %>
+       </li>
+    <% end %>
   </div>
 </div>
 
-<!-- to delete -->
-<% if user_signed_in? %>
-   <li>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-   </li>
-<% else %>
-   <li>
-      <%= link_to('Login', new_user_session_path)  %>
-   </li>
-<% end %>
-<!-- xxxxxxxxx -->
 
 <div class="container insurance-container">
   <div class="insurance-tag">
