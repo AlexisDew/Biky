@@ -94,8 +94,6 @@ brands.each do |brand|
     html_doc = Nokogiri::HTML(html_file)
 
     html_doc.search('.vignette_moto a').each do |element|
-      p '___________'
-      ap element
       model = {
         name: element.text.strip,
         year: year,
@@ -103,22 +101,37 @@ brands.each do |brand|
         # brand: Brand.where(name: brand[:name])
       }
       url = element.attribute('href').value
-      html_file = open(url).read
-      html_doc = Nokogiri::HTML(html_file)
 
-      model[:category] = html_doc.search('.signature')[0].text.strip
-      # #blocTech
-      html_doc.search('li').each do |element|
-        ap element
-        model[:saddle_height] = element.text.strip.match(/Hauteur de selle : (.*)/)[1] if element.text.strip.match(/Hauteur de selle : (.*)/)
-        model[:weight] = element.text.strip.match(/Poids à sec : (.*)/)[1] if element.text.strip.match(/Poids à sec : (.*)/)
-        model[:full_weight] = element.text.strip.match(/Poids en ordre de marche : (.*)/)[1] if element.text.strip.match(/Poids en ordre de marche : (.*)/)
-        model[:cylinder] = element.text.strip.match(/(.* cc) \(/)[1] if element.text.strip.match(/(.* cc) \(/)
-        model[:power] = element.text.strip.match(/(.* ch) à/)[1] if element.text.strip.match(/(.* ch) à/)
-        model[:power_ratio] = element.text.strip.match(/Rapport poids \/ puissance : (.*)/)[1] if element.text.strip.match(/Rapport poids \/ puissance : (.*)/)
-        model[:max_speed] = element.text.strip.match(/Vitesse max : (.*)/)[1] if element.text.strip.match(/Vitesse max : (.*)/)
-        model[:acceleration] = element.text.strip.match(/Accélération 0 à 100 : (.*)/)[1] if element.text.strip.match(/Accélération 0 à 100 : (.*)/)
-        model[:consumption] = element.text.strip.match(/Consommation moyenne : (.*)/)[1] if element.text.strip.match(/Consommation moyenne : (.*)/)
+      if url.match(/\/contact.html/)
+
+        html_file = open(url).read
+        html_doc = Nokogiri::HTML(html_file)
+
+        model[:category] = html_doc.search('.signature')[0].text.strip
+
+        html_doc.search('#blocTech li').each do |element|
+          model[:tank_capacity] = element.text.strip.match(/Réservoir : (.*)/)[1] if element.text.strip.match(/Réservoir : (.*)/)
+          model[:saddle_height] = element.text.strip.match(/Hauteur de selle : (.*)/)[1] if element.text.strip.match(/Hauteur de selle : (.*)/)
+          model[:length] = element.text.strip.match(/Longueur : (.*)/)[1] if element.text.strip.match(/Longueur : (.*)/)
+          model[:width] = element.text.strip.match(/Largeur : (.*)/)[1] if element.text.strip.match(/Largeur : (.*)/)
+          model[:height] = element.text.strip.match(/Hauteur : (.*)/)[1] if element.text.strip.match(/Hauteur : (.*)/)
+          model[:weight] = element.text.strip.match(/Poids à sec : (.*)/)[1] if element.text.strip.match(/Poids à sec : (.*)/)
+          model[:full_weight] = element.text.strip.match(/Poids en ordre de marche : (.*)/)[1] if element.text.strip.match(/Poids en ordre de marche : (.*)/)
+          model[:cylinder] = element.text.strip.match(/(.* cc) \(/)[1] if element.text.strip.match(/(.* cc) \(/)
+          model[:power] = element.text.strip.match(/(.* ch) à/)[1] if element.text.strip.match(/(.* ch) à/)
+          model[:power_ratio] = element.text.strip.match(/Rapport poids \/ puissance : (.*)/)[1] if element.text.strip.match(/Rapport poids \/ puissance : (.*)/)
+          model[:max_speed] = element.text.strip.match(/Vitesse max : (.*)/)[1] if element.text.strip.match(/Vitesse max : (.*)/)
+          model[:acceleration] = element.text.strip.match(/Accélération 0 à 100 : (.*)/)[1] if element.text.strip.match(/Accélération 0 à 100 : (.*)/)
+          model[:consumption] = element.text.strip.match(/Consommation moyenne : (.*)/)[1] if element.text.strip.match(/Consommation moyenne : (.*)/)
+        end
+
+        html_doc.search('.moteur li').each_with_index do |element, index|
+          model[:motor_type] = element.text.strip if index == 1
+        end
+
+        html_doc.search('.moteur li').each do |element|
+          model[:a2_compatibility] = element.text.strip if element.text.strip.match(/A2/) && (html_doc.search('.moteur li').last == element)
+        end
       end
       ap model
       models << model
