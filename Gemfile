@@ -9,7 +9,6 @@ gem 'puma'
 gem 'rails', '5.2.2.1'
 gem 'redis'
 
-
 gem 'pg_search'
 
 gem 'rest-client', '~> 1.8'
