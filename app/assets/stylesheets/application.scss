@@ -14,6 +14,7 @@
 @import "components/footer";
 @import "components/button";
 @import "components/tab";
+@import "components/menu";
 
 // Pages
 @import "pages/index";
@@ -95,4 +96,8 @@ a:hover {
 
 .smallest {
   font-size: 12px;
+}
+
+.white {
+  color: $white-biky;
 }

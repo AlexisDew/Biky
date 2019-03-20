@@ -8,3 +8,13 @@
   color: $white-2-biky;
 }
 
+.btn-secondary-biky {
+  background-color: $white-biky;
+  border: 1px solid $blue-2-biky;
+  color: $blue-2-biky;
+}
+
+.btn-secondary-biky:hover {
+  background-color: #E6F0FF;
+  color: $blue-2-biky;
+}

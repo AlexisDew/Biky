@@ -53,3 +53,51 @@
     width: 60%;
   }
 }
+/////////////////////////
+.homepage_logo_image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-height: calc(100vh + (100vh * 63 / 900 ) );
+  max-width: 65vw;
+  z-index: -1;
+}
+
+.biky-description {
+  margin-top: 15vh;
+  height: 70vh;
+  margin-bottom: 15vh;
+  // background-color: yellow;
+  display: flex;
+  align-items: center;
+}
+
+.biky-description {
+  p {
+    margin-top: 32px;
+    margin-bottom: 32px
+  }
+  span {
+    color: $blue-biky;
+  }
+}
+
+.homepage_buttons {
+  display: flex;
+  .btn-primary-biky {
+    margin-right: 16px;
+  }
+  .btn {
+    width: 168px;
+  }
+}
+
+.homepage_logo_image_mobile {
+  position: absolute;
+  top: 20%;
+  height: 60%;
+}
+
+.mobile-banner {
+  position: relative;
+}

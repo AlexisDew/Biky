@@ -1,0 +1,20 @@
+.homepage-menu {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+ .dropdown-toggle {
+    color: $white-biky;
+ }
+}
+
+.menu-left-fullscreen {
+  left: 100px;
+}
+
+.top-left-links {
+  margin: 16px;
+  border-radius: 40px;
+  background-color: $white-biky;
+}

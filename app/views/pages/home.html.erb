@@ -1,36 +1,33 @@
-<!-- <div class="col-xs-6 logo-title">
-  <div class="title-logo-animated">
-    <%= image_tag asset_path('logo_text_dark.png'), alt: 'biky logo', width: '40%' %>
-  </div>
+<%= render 'shared/menu' %>
+<div class="col-xs-12 d-block d-md-none mobile-banner">
+  <%= image_tag asset_path('logo_text_extra-white'), alt: 'biky logo', width: '100%', class: 'homepage_logo_image_mobile' %>
+  <%= image_tag asset_path('homepage_banner_mobile'), alt: 'banner', width: '100%' %>
 </div>
-<div class="col-xs-6">
-
-</div> -->
-
-<div class="banner banner-title-image">
-  <div class="banner-content">
-    <%= image_tag asset_path('logo_text_white.png'), alt: 'biky logo', width: '40%' %>
-    <p>Premier site de location de 2 roues entre particuliers</p>
-    <!-- <a href="#" class="btn btn-primary-biky">Comment ça marche ?</a> -->
-    <% if user_signed_in? %>
-       <li>
-          <%= link_to('Deconexion', destroy_user_session_path, method: :delete, class: 'btn btn-primary-biky') %>
-       </li>
-    <% else %>
-       <li>
-          <%= link_to('Se connecter', new_user_session_path, class: 'btn btn-primary-biky')  %>
-       </li>
-    <% end %>
+<div class="wrapper">
+  <div class="row">
+  <div class="col-xs-12 col-md-5">
+    <div class="biky-description">
+      <div class="container">
+        <h1>
+          <span>LOUER FACILEMENT</span> <br>
+          Moto. Remorque, Scooter...
+        </h1>
+        <p class='thin'>Premier site de location de 2 roues entre particuliers</p>
+        <div class="homepage_buttons" vertical-align="center">
+          <%= link_to('Poster une annonce', new_user_session_path, class: 'btn btn-primary-biky')  %>
+          <%= link_to('Louer un 2 roues', new_user_session_path, class: 'btn btn-secondary-biky')  %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-none d-md-block col-md-7">
+    <%= image_tag asset_path('homepage_logo_image.svg'), alt: 'biky logo', class: 'homepage_logo_image' %>
+  </div>
   </div>
 </div>
 
 
 <div class="container insurance-container">
-  <div class="insurance-tag">
-    <img src="https://cdn0.iconfinder.com/data/icons/business-290/100/round-solid-business-set6-31-512.png" alt="Logo assu">
-    <p>Pour plus de sérénité, XXX assure toutes nos locations</p>
-  </div>
-
   <div class="row">
     <div class="col-xs-12 col-md-4">
       <div class="proposal">
