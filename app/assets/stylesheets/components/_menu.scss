@@ -1,13 +1,22 @@
-.homepage-menu {
-  z-index: 10;
+.homepage-menu-large {
+  z-index: 1;
   position: absolute;
   top: 16px;
-  right: 16px;
+  left: 16px;
+}
 
+.homepage-menu-mobile {
+  z-index: 1;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
  .dropdown-toggle {
     color: $white-biky;
+    font-size: 150%;
  }
+
 }
+
 
 .menu-left-fullscreen {
   left: 100px;
@@ -18,3 +27,5 @@
   border-radius: 40px;
   background-color: $white-biky;
 }
+
+

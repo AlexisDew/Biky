@@ -1,8 +1,30 @@
-<%= render 'shared/menu' %>
 <div class="col-xs-12 d-block d-md-none mobile-banner">
+  <%= render 'shared/menu-mobile' %>
   <%= image_tag asset_path('logo_text_extra-white.svg'), alt: 'biky logo', width: '100%', class: 'homepage_logo_image_mobile' %>
-  <%= image_tag asset_path('homepage_banner_mobile.svg'), alt: 'banner', width: '100%' %>
+  <%= image_tag asset_path('homepage_banner_mobile.svg'), alt: 'banner', width: '100%', class: 'homepage-mobile-banner' %>
 </div>
+<nav>
+  <div class="homepage-menu-large d-none d-md-block">
+    <ul class='list-inline top-left-links'>
+      <% if user_signed_in? %>
+         <li>
+            <%= link_to('Deconexion', destroy_user_session_path, method: :delete, class: 'btn btn-primary-biky') %>
+         </li>
+      <% else %>
+         <li class='list-inline-item'>
+            <%= link_to('Se connecter', new_user_session_path, class: 'btn btn-primary-biky')  %>
+         </li>
+      <% end %>
+        <li class='list-inline-item'>
+          <%= link_to('Infos', new_user_session_path, class: 'btn')  %>
+        </li>
+        <li class='list-inline-item'>
+          <%= link_to('S\'inscrire', new_user_registration_path, class: 'btn')  %>
+        </li>
+    </ul>
+  </div>
+</nav>
+
 <div class="wrapper">
   <div class="row">
   <div class="col-xs-12 col-md-5">
