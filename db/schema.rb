@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_18_114408) do
+ActiveRecord::Schema.define(version: 2019_03_21_162219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,11 +58,26 @@ ActiveRecord::Schema.define(version: 2019_03_18_114408) do
   create_table "models", force: :cascade do |t|
     t.string "name"
     t.integer "year"
+    t.integer "integer"
     t.integer "engine_size"
     t.integer "power"
     t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
+    t.string "tank_capacity"
+    t.string "saddle_height"
+    t.string "length"
+    t.string "width"
+    t.string "height"
+    t.string "weight"
+    t.string "full_weight"
+    t.string "power_ratio"
+    t.string "max_speed"
+    t.string "acceleration"
+    t.string "consumption"
+    t.string "motor_type"
+    t.string "a2_compatibility"
     t.index ["brand_id"], name: "index_models_on_brand_id"
   end
 
