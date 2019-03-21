@@ -98,10 +98,6 @@
   height: 60%;
 }
 
-.homepage-mobile-banner {
-  top: 38px;
-}
-
 .mobile-banner {
   position: relative;
 }
@@ -111,7 +107,15 @@
   display: flex;
   align-items: center;
   padding: 0;
-  min-height: 512px;
+  height: 512px;
+}
+
+@media screen and (max-width: 768px) {
+  .homepage_helmet {
+    background-image: url(homepage_helmet_mobile.svg);
+    background-size: cover;
+    background-position: top;
+  }
 }
 
 .homepage_helmet_mobile {
@@ -123,3 +127,14 @@
   margin: 56px 0;
 }
 
+.logo-large {
+  position: absolute;
+  width: 35vw;
+  top: 35vh;
+  right: 10%;
+}
+
+.helmet {
+  position: absolute;
+  right: 50vw;
+}
