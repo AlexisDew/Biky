@@ -101,3 +101,8 @@ a:hover {
 .white {
   color: $white-biky;
 }
+
+.container_without_padding {
+  padding-left: 0;
+  padding-right: 0;
+}

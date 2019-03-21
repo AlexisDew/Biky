@@ -66,7 +66,7 @@
           <img src="https://static.thenounproject.com/png/800605-200.png" alt="Moto locked">
         </div>
         <h3>Louez en sécurité</h3>
-        <p>La <span>XXX</span> assure toutes les locations passée via byki. Ainsi vous êtes sur d’être <span>couvert en toutes circonstances</span>.</p>
+        <p>L’équipe de Biky se mobilise pour trouver au plus vite une <span>Assurance</span>. Notre objectif est que toutes les locations passée via byki soit prris en charge par cette assurance. Ainsi vous serez sur d’être <span>couvert en toutes circonstances</span>.</p>
       </div>
     </div>
     <div class="col-xs-12 col-md-4">
@@ -81,64 +81,72 @@
   </div>
 </div>
 
-<div class="banner banner-rent-image">
-  <div class="container">
-  <div class="col-xs-12 col-md-6">
-    <h2>TU AS UN 2 ROUES, UNE REMORQUE ?</h2>
-    <p>Mets la en location sur byki et gagne jusqu’à 3 000€ par an soit 250€/mois</p>
-    <a href="#" class="btn btn-primary-biky">Deposes ton annonce</a>
-  </div>
-  </div>
-</div>
-
-
-<h2 class='text-center'>Choisis ta raison de louer</h2>
-<div class="row text-center">
-  <div class="col-xs-12 col-md-4">
-    <div class="proposal">
-      <div class="proposal-icon">
-        <img src="https://static.thenounproject.com/png/224428-200.png" alt="Roadtrip">
+<div class="wrapper">
+  <div class="row">
+    <div class="d-none d-md-block col-md-5 container_without_padding">
+      <div class="homepage_helmet">
+      <%= image_tag asset_path('homepage_helmet.png'), alt: 'helmet', width: '100%' %>
       </div>
-      <h3>Roadtrip, Weekend</h3>
     </div>
-  </div>
-
-  <div class="col-xs-12 col-md-4">
-    <div class="proposal">
-      <div class="proposal-icon">
-        <img src="https://static.thenounproject.com/png/780045-200.png" alt="Love moto">
+    <div class="col-xs-12 col-md-7 text-center homepage_helmet">
+      <%= image_tag asset_path('homepage_helmet_mobile.svg'), alt: 'helmet', width: '100%', class: 'd-block d-md-none homepage_helmet_mobile' %>
+      <div class="container">
+        <h2>TU AS UN 2 ROUES, UNE REMORQUE ?</h2>
+        <p>Mets la en location sur byki et gagne jusqu’à 3 000€ par an soit 250€/mois</p>
+        <a href="#" class="btn btn-primary-biky">Deposes ton annonce</a>
       </div>
-      <h3>Essayer avant d'acheter</h3>
-    </div>
-  </div>
-
-  <div class="col-xs-12 col-md-4">
-    <div class="proposal">
-      <div class="proposal-icon">
-        <img src="https://static.thenounproject.com/png/882917-200.png" alt="Couple riding">
-      </div>
-      <h3>Balade</h3>
-    </div>
-  </div>
-
-  <div class="col-xs-12 col-md-4 offset-md-2">
-    <div class="proposal">
-      <div class="proposal-icon">
-        <img src="http://albanymotorcycletraining.com.au/wp-content/uploads/2015/09/Motorcycle_Trailer_Icon-copy.jpg" alt="Remorque moto">
-      </div>
-      <h3>Transport</h3>
-    </div>
-  </div>
-
-  <div class="col-xs-12 col-md-4">
-    <div class="proposal">
-      <div class="proposal-icon">
-        <img src="https://static.thenounproject.com/png/253661-200.png" alt="Drapeau circuit">
-      </div>
-      <h3>Circuit</h3>
     </div>
   </div>
 </div>
 
+<div class="location_reason">
+  <h2 class='text-center'>Choisis ta raison de louer</h2>
+  <div class="row text-center">
+    <div class="col-xs-12 col-md-4">
+      <div class="proposal">
+        <div class="proposal-icon">
+          <img src="https://static.thenounproject.com/png/224428-200.png" alt="Roadtrip">
+        </div>
+        <h3>Roadtrip, Weekend</h3>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4">
+      <div class="proposal">
+        <div class="proposal-icon">
+          <img src="https://static.thenounproject.com/png/780045-200.png" alt="Love moto">
+        </div>
+        <h3>Essayer avant d'acheter</h3>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4">
+      <div class="proposal">
+        <div class="proposal-icon">
+          <img src="https://static.thenounproject.com/png/882917-200.png" alt="Couple riding">
+        </div>
+        <h3>Balade</h3>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4 offset-md-2">
+      <div class="proposal">
+        <div class="proposal-icon">
+          <img src="http://albanymotorcycletraining.com.au/wp-content/uploads/2015/09/Motorcycle_Trailer_Icon-copy.jpg" alt="Remorque moto">
+        </div>
+        <h3>Transport</h3>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4">
+      <div class="proposal">
+        <div class="proposal-icon">
+          <img src="https://static.thenounproject.com/png/253661-200.png" alt="Drapeau circuit">
+        </div>
+        <h3>Circuit</h3>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= render 'shared/footer' %>
