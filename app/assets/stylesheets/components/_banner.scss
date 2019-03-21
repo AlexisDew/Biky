@@ -9,28 +9,6 @@
   justify-content: center; /*to align hor */
 }
 
-.banner-title-image {
-  height: calc(100vh - (64px/2));
-  background-image:
-  linear-gradient(180deg, rgba(0, 59, 147, 0.4) 0%, rgba(0, 59, 147, 0.1) 100%),
-  url('https://cdn.shopify.com/s/files/1/2543/3980/collections/hands-on-motorcycle_4460x4460_5e752a73-7ee5-44f3-85be-79631bfdc0cb_1800x.jpg?v=1512909546');
-  p {
-    margin-top: 16px;
-    margin-bottom: 80px;
-    font-family: 'Rubik';
-    font-size: 24px;
-  }
-}
-
-.banner-rent-image {
-  height: 560px;
-  background-image:
-  linear-gradient(180deg, rgba(0, 59, 147, 0.4) 0%, rgba(0, 59, 147, 0.1) 100%),
-  url('https://static1.squarespace.com/static/5733aaa6f699bb4166742d89/t/576355fe4402437fb30f1fd6/1466127874494/?format=1500w');
-  margin-top: 64px;
-  margin-bottom: 64px;
-}
-
 .banner-authentication-image {
   min-height: 100vh;
   background-position: calc(100% - 20%);
