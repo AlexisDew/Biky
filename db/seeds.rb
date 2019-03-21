@@ -1,79 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
-# Scrapper BikeZ.com
-# require 'nokogiri'
-# require 'open-uri'
-# require 'awesome_print'
-# @models = []
-# @brands = []
-
-# puts '___________Models:___________'
-
-# def make_model_for(year)
-#   url = "http://www.bikez.com/year/index.php?year=#{year}"
-#   html_file = open(url).read
-#   html_doc = Nokogiri::HTML(html_file)
-
-#   i = 1
-#   model = {year: year}
-
-#   html_doc.search('.zebra td').each do |element|
-#     case i # always 3 td for one bike (but not always on the same row... :( )
-#     when 1 # 1st column = model with link
-#       if element.search('a').count > 0
-#         if element.search('a').last.text == ''
-#           i = 0
-#         else
-#           model[:model] = element.search('a').last.text.strip
-#           model[:link] = element.search('a').last.attribute('href').value.gsub('../', 'http://bikez.com/')
-#         end
-#       else
-#         i = 0
-#       end
-#     when 2 # 2nd column = brand whith link
-#       if element.search('a').count > 0
-#         model[:brand] = element.search('a').last.text.strip
-#         brand = {
-#           name: element.search('a').last.text.strip,
-#           link: element.search('a').last.attribute('href').value.gsub('../', 'http://bikez.com/')
-#         }
-#       end
-#       @brands << brand
-#     when 3 # 3rd column = image / for us saving + reinitialize counter i
-#       ap model
-#       @models << model
-#       i = 0
-#     end
-#     i += 1
-#   end
-# end
-
-# for year in (2000..2019) # (1970..2019)
-#   scraper_results = make_model_for(year)
-# end
-
-# @brands.uniq!
-# puts '___________Brands:___________'
-# ap @brands
-
-
-#/////////////////////////////////////////////////////
-# Scrapper Motoplanet
+# Scrapper Motoplanet to catch all models
 require 'nokogiri'
 require 'open-uri'
 require 'awesome_print'
 models = []
-brands = [] # used to scrape
-# Model.destroy_all
-# Brand.destroy_all
+brands = []
+puts '1. First destroy all models and brands in the database...'
+Model.destroy_all
+Brand.destroy_all
 
+
+puts '2. Then scrapping brands...'
 url = "https://www.motoplanete.com/constructeurs/constructeursIndex/index.php" # catching brands + id
 html_file = open(url).read
 html_doc = Nokogiri::HTML(html_file)
@@ -83,12 +19,17 @@ html_doc.search('#listeMoto a').each do |element|
     name: element.text.strip,
     id: element.attribute('href').value.match(/constructeur\/(\d*)\//)[1]
   }
-  # Brand.new(name: brand[:name])
   brands << brand
+  brand = Brand.create!(name: brand[:name])
+  brand.save
+  ap brand
 end
 
+puts '3. Then for each brand adding models...'
 brands.each do |brand|
-  for year in (2009..2019)
+  puts "Let's go first with : #{brand[:name]}.."
+  for year in (2019..2019)
+    puts "Scrapping all #{brand} bikes in #{year}"
     url = "https://www.motoplanete.com/constructeurs/constructeur/#{brand[:id]}/#{year}/#{brand[:name]}.php"
     html_file = open(url).read
     html_doc = Nokogiri::HTML(html_file)
@@ -97,8 +38,7 @@ brands.each do |brand|
       model = {
         name: element.text.strip,
         year: year,
-        brand: brand[:name]
-        # brand: Brand.where(name: brand[:name])
+        # brand: brand[:name]
       }
       url = element.attribute('href').value
 
@@ -117,8 +57,8 @@ brands.each do |brand|
           model[:height] = element.text.strip.match(/Hauteur : (.*)/)[1] if element.text.strip.match(/Hauteur : (.*)/)
           model[:weight] = element.text.strip.match(/Poids à sec : (.*)/)[1] if element.text.strip.match(/Poids à sec : (.*)/)
           model[:full_weight] = element.text.strip.match(/Poids en ordre de marche : (.*)/)[1] if element.text.strip.match(/Poids en ordre de marche : (.*)/)
-          model[:cylinder] = element.text.strip.match(/(.* cc) \(/)[1] if element.text.strip.match(/(.* cc) \(/)
-          model[:power] = element.text.strip.match(/(.* ch) à/)[1] if element.text.strip.match(/(.* ch) à/)
+          model[:engine_size] = element.text.strip.match(/(.* cc) \(/)[1].to_i if element.text.strip.match(/(.* cc) \(/)
+          model[:power] = element.text.strip.match(/(.* ch) à/)[1].to_i if element.text.strip.match(/(.* ch) à/)
           model[:power_ratio] = element.text.strip.match(/Rapport poids \/ puissance : (.*)/)[1] if element.text.strip.match(/Rapport poids \/ puissance : (.*)/)
           model[:max_speed] = element.text.strip.match(/Vitesse max : (.*)/)[1] if element.text.strip.match(/Vitesse max : (.*)/)
           model[:acceleration] = element.text.strip.match(/Accélération 0 à 100 : (.*)/)[1] if element.text.strip.match(/Accélération 0 à 100 : (.*)/)
@@ -133,10 +73,15 @@ brands.each do |brand|
           model[:a2_compatibility] = element.text.strip if element.text.strip.match(/A2/) && (html_doc.search('.moteur li').last == element)
         end
       end
-      ap model
+
+      model[:brand] = Brand.find_by(name: brand[:name])
+      model = Model.create!(model)
       models << model
+      ap model
     end
+    puts "#{brand[:name]}: All bikes in #{year} scrapped!"
   end
+  puts "Done with : #{brand} (each year requested models have been scraped!)"
 end
 
 
