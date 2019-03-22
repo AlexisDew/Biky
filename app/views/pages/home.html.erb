@@ -1,152 +1,59 @@
-<div class="col-xs-12 d-block d-md-none mobile-banner">
-  <%= render 'shared/menu-mobile' %>
-  <%= image_tag asset_path('home/logo_text_extra-white.svg'), alt: 'biky logo', width: '100%', class: 'homepage_logo_image_mobile' %>
-  <%= image_tag asset_path('home/homepage_banner_mobile.svg'), alt: 'banner', width: '100%', class: 'homepage-mobile-banner' %>
-</div>
-<nav>
-  <div class="homepage-menu-large d-none d-md-block">
-    <ul class='list-inline top-left-links'>
-      <% if user_signed_in? %>
-         <li>
-            <%= link_to('Deconexion', destroy_user_session_path, method: :delete, class: 'btn btn-primary-biky') %>
-         </li>
-      <% else %>
-         <li class='list-inline-item'>
-            <%= link_to('Se connecter', new_user_session_path, class: 'btn btn-primary-biky')  %>
-         </li>
-      <% end %>
-        <li class='list-inline-item'>
-          <%= link_to('Infos', new_user_session_path, class: 'btn')  %>
-        </li>
-        <li class='list-inline-item'>
-          <%= link_to('S\'inscrire', new_user_registration_path, class: 'btn')  %>
-        </li>
-    </ul>
-  </div>
-</nav>
+<%= render 'shared/navbar' %>
 
-<div class="wrapper">
-  <div class="row">
-  <div class="col-xs-12 col-md-5">
-    <div class="biky-description">
-      <div class="container">
-        <h1>
-          <span>LOUER FACILEMENT</span> <br>
-          Moto. Remorque, Scooter...
-        </h1>
-        <p class='thin'>Premier site de location de 2 roues entre particuliers</p>
-        <div class="homepage_buttons" vertical-align="center">
+<div class="homepage_wrapper">
+  <div class="desktop-banner d-none d-md-block">
+    <div class="banner_logo_container_desktop">
+      <%= image_tag asset_path('home/desktop/logo_banner_desktop.svg'), alt: 'logo', class: 'logo_banner_desktop' %>
+      <%= image_tag asset_path('home/desktop/head_shadows_desktop.svg'), alt: 'logo', class: 'head_shadows_desktop' %>
+    </div>
+    <div class="desktop_calltoaction_container">
+      <div class="desktop_calltoaction">
+        <h1>Biky</h1>
+        <h2><span>LOUER FACILEMENT</span><br>Moto, Remorque, Scooter...</h2>
+        <p>Premier site de location de 2 roues entre particuliers</p>
+        <div class="buttons">
           <%= link_to('Poster une annonce', new_user_session_path, class: 'btn btn-primary-biky')  %>
           <%= link_to('Louer un 2 roues', new_user_session_path, class: 'btn btn-secondary-biky')  %>
         </div>
       </div>
     </div>
-  </div>
-  <div class="d-none d-md-block col-md-7ss">
-    <%= image_tag asset_path('home/homepage_logo_image.svg'), alt: 'biky background', class: 'homepage_logo_image' %>
-    <%= image_tag asset_path('home/logo_text_extra-white.svg'), alt: 'biky logo', class: 'logo-large' %>
-  </div>
-  </div>
-</div>
-
-<div class="container insurance-container">
-  <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <div class="proposal">
-        <div class="proposal-icon">
-          <img src="https://static.thenounproject.com/png/1148410-200.png" alt="Euros">
+  </div> <!-- end of the desktop Banner -->
+  <div class="mobile-banner d-md-none d-block">
+    <div class="mobile_calltoaction_container">
+      <div class="mobile_calltoaction">
+        <%= image_tag asset_path('home/logo_text_extra-white.svg'), alt: 'logo', class: 'logo_text_extra-white' %>
+        <h2><span>LOUER FACILEMENT</span><br>Moto, Remorque, Scooter...</h2>
+        <p>Premier site de location de 2 roues entre particuliers</p>
+        <div class="buttons text-center">
+          <%= link_to('Poster une annonce', new_user_session_path, class: 'btn btn-primary-biky')  %>
+          <br>
+          <%= link_to('Louer un 2 roues', new_user_session_path, class: 'btn btn-secondary-biky')  %>
         </div>
-        <h3>Gagnez de l'argent</h3>
-        <p>Gagnez jusqu’à <span>3 000 € par an</span> en mettant en location votre véhicule ou votre remorque moto. <span>Econnomisez jusqu’à 20%</span> sur vos location en passant par la location de particuliers à particuliers</p>
       </div>
     </div>
-    <div class="col-xs-12 col-md-4">
-      <div class="proposal">
-        <div class="proposal-icon">
-          <img src="https://static.thenounproject.com/png/800605-200.png" alt="Moto locked">
-        </div>
-        <h3>Louez en sécurité</h3>
-        <p>L’équipe de Biky se mobilise pour trouver au plus vite une <span>Assurance</span>. Notre objectif est que toutes les locations passée via byki soit prris en charge par cette assurance. Ainsi vous serez sur d’être <span>couvert en toutes circonstances</span>.</p>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <div class="proposal">
-        <div class="proposal-icon">
-          <img src="https://static.thenounproject.com/png/540620-200.png" alt="Confiance">
-        </div>
-        <h3>Communauté</h3>
-        <p><span>Nous connaissons</span> chacun de <span>nos membres</span>. Comment ? <span>Nous vérifions</span> profils, avis, et pièces d'identité. Vous savez ainsi avec qui vous traitez.</p>
-      </div>
-    </div>
-  </div>
-</div>
+  </div> <!-- end of the mobile Banner-->
 
-<!--  -->
-
-<div class="wrapper">
-  <div class="row">
-    <%= image_tag asset_path('home/homepage_helmet.svg'), alt: 'helmet', class: 'helmet d-none d-md-block' %>
-
-    <div class="offset-md-6 col-md-6 text-center homepage_helmet">
-      <div class="container">
-        <h2>Tu as un 2 roues, une remorque ?</h2>
-        <p>Mets la en location sur byki et gagne jusqu’à 3 000€ par an soit 250€/mois</p>
-        <a href="#" class="btn btn-primary-biky">Deposes ton annonce</a>
-      </div>
-    </div>
-  </div>
 </div>
 
 
 
-<div class="location_reason">
-  <h2 class='text-center'>Choisis ta raison de louer</h2>
-  <div class="row text-center">
-    <div class="col-xs-12 col-md-4">
-      <div class="proposal">
-        <div class="proposal-icon">
-          <img src="https://static.thenounproject.com/png/224428-200.png" alt="Roadtrip">
-        </div>
-        <h3>Roadtrip, Weekend</h3>
-      </div>
-    </div>
 
-    <div class="col-xs-12 col-md-4">
-      <div class="proposal">
-        <div class="proposal-icon">
-          <img src="https://static.thenounproject.com/png/780045-200.png" alt="Love moto">
-        </div>
-        <h3>Essayer avant d'acheter</h3>
-      </div>
-    </div>
 
-    <div class="col-xs-12 col-md-4">
-      <div class="proposal">
-        <div class="proposal-icon">
-          <img src="https://static.thenounproject.com/png/882917-200.png" alt="Couple riding">
-        </div>
-        <h3>Balade</h3>
-      </div>
-    </div>
 
-    <div class="col-xs-12 col-md-4 offset-md-2">
-      <div class="proposal">
-        <div class="proposal-icon">
-          <img src="http://albanymotorcycletraining.com.au/wp-content/uploads/2015/09/Motorcycle_Trailer_Icon-copy.jpg" alt="Remorque moto">
-        </div>
-        <h3>Transport</h3>
-      </div>
-    </div>
 
-    <div class="col-xs-12 col-md-4">
-      <div class="proposal">
-        <div class="proposal-icon">
-          <img src="https://static.thenounproject.com/png/253661-200.png" alt="Drapeau circuit">
-        </div>
-        <h3>Circuit</h3>
-      </div>
-    </div>
-  </div>
-</div>
 
-<%= render 'shared/footer' %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <%= render 'shared/footer' %>

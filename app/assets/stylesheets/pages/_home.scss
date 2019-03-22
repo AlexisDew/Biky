@@ -1,140 +1,265 @@
-.insurance-container {
-  margin-top: 24px;
+.homepage_wrapper {
+  padding: 0;
+  margin: 0;
 }
 
-.insurance-tag {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  background: $white-biky;
-  position: absolute;
-  border-radius: 10px;
-  width: 248px;
-  height: 64px;
-  left: calc(100vw/2 - 248px/2);
-  top: calc(100vh - 64px);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-  img {
-    width: 48px;
-    height: 48px;
-  }
-  p {
-    margin: 0;
-    padding-left: 8px;
-    font-style: italic;
-    font-weight: 200;
-    line-height: normal;
-    color: $gray-3-biky;
-    font-size: 14px;
-  }
-}
-
-.proposal {
-  margin-bottom: 56px;
-  margin-top: 56px;
-  text-align: center;
-  span {
-    color: $blue-biky;
-    font-weight: bold;
-  }
-}
-
-.proposal-icon {
-  display: inline-block;
-  background-color: $white-2-biky;
-  border-radius: 50%;
-  width: 160px;
-  height: 160px;
+.desktop-banner {
+  margin: 0;
   position: relative;
-  img {
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    width: 60%;
-  }
+  padding-top: 86px;
+  color: $white-biky;
+  // background
+  height: 100vh;
+  background-image: url(home/desktop/banner.svg);
+  background-size: cover;
+  background-position: left bottom;
 }
-/////////////////////////
-.homepage_logo_image {
+
+.banner_logo_container_desktop {
   position: absolute;
   top: 0;
-  right: 0;
-  max-height: calc(100vh + (100vh * 63 / 900 ) );
-  max-width: 65vw;
-  z-index: -1;
-}
-
-.biky-description {
-  margin-top: 15vh;
-  height: 70vh;
-  margin-bottom: 15vh;
-  // background-color: yellow;
+  padding-top: 170px;
+  height: 100vh;
+  width: calc(100vw * 700/1440);
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
-.biky-description {
+.logo_banner_desktop {
+  height: 50%;
+  max-height: 300px;
+  padding-bottom: 86px;
+}
+
+.head_shadows_desktop {
+  position: absolute;
+  width: calc(100vw * 700/1440);
+  bottom: 0;
+  left: 0;
+}
+
+.desktop_calltoaction_container {
+  height: 100%;
+  float: right;
+  width: 50vw;
+  display: flex;
+  // align-items: center;
+}
+
+.desktop_calltoaction {
+  max-width: 464px;
+  padding-top: 84px;
+  padding-left: 32px;
+  h1 {
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 120px;
+    line-height: normal;
+    color: $white-biky;
+  }
+  h2 {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: normal;
+  }
+  h2 span {
+    font-weight: bold;
+    color: $blue-2-biky;
+  }
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .btn {
+      width: 200px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.logo_text_extra-white {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.mobile_calltoaction_container {
+  background-color: $blue-4-biky;
+  color: white;
+}
+
+.mobile_calltoaction {
+  padding: 86px 32px;
+  h2 {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: normal;
+  }
+  h2 span {
+    font-weight: bold;
+    color: $blue-2-biky;
+  }
+
   p {
-    margin-top: 32px;
-    margin-bottom: 32px
+    font-size: 18px;
+    font-weight: thin;
   }
-  span {
-    color: $blue-biky;
-  }
-}
-
-.homepage_buttons {
-  display: flex;
-  .btn-primary-biky {
-    margin-right: 16px;
-  }
-  .btn {
-    width: 168px;
+  .buttons {
+    margin-top: 72px;
+    width: 100%;
+    // display: flex;
+    // justify-content: space-between;
+    .btn {
+      width: 200px;
+      margin-bottom: 12px;
+    }
   }
 }
 
-.homepage_logo_image_mobile {
-  position: absolute;
-  top: 20% ;
-  height: 60%;
-}
 
-.mobile-banner {
-  position: relative;
-}
 
-.homepage_helmet {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0;
-  height: 512px;
-}
 
-@media screen and (max-width: 768px) {
-  .homepage_helmet {
-    background-image: url(home/homepage_helmet_mobile.svg);
-    background-size: cover;
-    background-position: top;
-  }
-}
+// .insurance-container {
+//   margin-top: 24px;
+// }
 
-.homepage_helmet_mobile {
-  position: absolute;
-  z-index: -1;
-}
+// .insurance-tag {
+//   display: flex;
+//   align-items: center;
+//   padding: 8px;
+//   background: $white-biky;
+//   position: absolute;
+//   border-radius: 10px;
+//   width: 248px;
+//   height: 64px;
+//   left: calc(100vw/2 - 248px/2);
+//   top: calc(100vh - 64px);
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+//   img {
+//     width: 48px;
+//     height: 48px;
+//   }
+//   p {
+//     margin: 0;
+//     padding-left: 8px;
+//     font-style: italic;
+//     font-weight: 200;
+//     line-height: normal;
+//     color: $gray-3-biky;
+//     font-size: 14px;
+//   }
+// }
 
-.location_reason {
-  margin: 56px 0;
-}
+// .proposal {
+//   margin-bottom: 56px;
+//   margin-top: 56px;
+//   text-align: center;
+//   span {
+//     color: $blue-biky;
+//     font-weight: bold;
+//   }
+// }
 
-.logo-large {
-  position: absolute;
-  width: 35vw;
-  top: 35vh;
-  right: 10%;
-}
+// .proposal-icon {
+//   display: inline-block;
+//   background-color: $white-2-biky;
+//   border-radius: 50%;
+//   width: 160px;
+//   height: 160px;
+//   position: relative;
+//   img {
+//     position: absolute;
+//     top: 20%;
+//     left: 20%;
+//     width: 60%;
+//   }
+// }
+// /////////////////////////
+// .homepage_logo_image {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   max-height: calc(100vh + (100vh * 63 / 900 ) );
+//   max-width: 65vw;
+//   z-index: -1;
+// }
 
-.helmet {
-  position: absolute;
-  right: 50vw;
-}
+// .biky-description {
+//   margin-top: 15vh;
+//   height: 70vh;
+//   margin-bottom: 15vh;
+//   // background-color: yellow;
+//   display: flex;
+//   align-items: center;
+// }
+
+// .biky-description {
+//   p {
+//     margin-top: 32px;
+//     margin-bottom: 32px
+//   }
+//   span {
+//     color: $blue-biky;
+//   }
+// }
+
+// .homepage_buttons {
+//   display: flex;
+//   .btn-primary-biky {
+//     margin-right: 16px;
+//   }
+//   .btn {
+//     width: 168px;
+//   }
+// }
+
+// .homepage_logo_image_mobile {
+//   position: absolute;
+//   top: 20% ;
+//   height: 60%;
+// }
+
+// .mobile-banner {
+//   position: relative;
+// }
+
+// .homepage_helmet {
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+//   padding: 0;
+//   height: 512px;
+// }
+
+// @media screen and (max-width: 768px) {
+//   .homepage_helmet {
+//     background-image: url(home/homepage_helmet_mobile.svg);
+//     background-size: cover;
+//     background-position: top;
+//   }
+// }
+
+// .homepage_helmet_mobile {
+//   position: absolute;
+//   z-index: -1;
+// }
+
+// .location_reason {
+//   margin: 56px 0;
+// }
+
+// .logo-large {
+//   position: absolute;
+//   width: 35vw;
+//   top: 35vh;
+//   right: 10%;
+// }
+
+// .helmet {
+//   position: absolute;
+//   right: 50vw;
+// }
