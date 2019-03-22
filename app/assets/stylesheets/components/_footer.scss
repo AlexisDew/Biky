@@ -1,24 +1,25 @@
 .footer {
-  background: $black-3-biky;
+  background: $blue-4-biky;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  color: $gray-4-biky;
+  color: $white-biky;
+  font-weight: 100;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: $gray-4-biky;
+  color: $white-biky;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  color: $white-3-biky;
+  color: $blue-3-biky;
 }
 .footer .fa-heart {
   color: $red;
