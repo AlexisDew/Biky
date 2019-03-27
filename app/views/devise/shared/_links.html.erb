@@ -1,18 +1,18 @@
 <div class="authentication-tabs">
 
   <%- if controller_name == 'sessions' %>
-    <%= link_to('SE CONNECTER', new_session_path(resource_name), class: 'authentication-tab active')  %>
-    <%= link_to('S\'INSCRIRE', new_registration_path(resource_name), class: 'authentication-tab')  %>
+    <%= link_to('CONNEXION', new_session_path(resource_name), class: 'authentication-tab active')  %>
+    <%= link_to('INSCRIPTION', new_registration_path(resource_name), class: 'authentication-tab')  %>
   <% end %>
 
   <%- if controller_name == 'registrations' %>
-    <%= link_to('SE CONNECTER', new_session_path(resource_name), class: 'authentication-tab')  %>
-    <%= link_to('S\'INSCRIRE', new_registration_path(resource_name), class: 'authentication-tab active')  %>
+    <%= link_to('CONNEXION', new_session_path(resource_name), class: 'authentication-tab')  %>
+    <%= link_to('INSCRIPTION', new_registration_path(resource_name), class: 'authentication-tab active')  %>
   <% end %>
   <!-- for forgot password -->
 <!--   <%- if controller_name != 'sessions' && controller_name != 'registrations'%>
-    <%= link_to('SE CONNECTER', new_session_path(resource_name), class: 'authentication-tab')  %>
-    <%= link_to('S\'INSCRIRE', new_registration_path(resource_name), class: 'authentication-tab')  %>
+    <%= link_to('CONNEXION', new_session_path(resource_name), class: 'authentication-tab')  %>
+    <%= link_to('INSCRIPTION', new_registration_path(resource_name), class: 'authentication-tab')  %>
   <% end %> -->
   <!--  -->
 </div>
