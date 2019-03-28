@@ -36,8 +36,10 @@
   <div class="home-section-separator">s</div> <!-- end of separator -->
 </div>
 
-<div class="wrapper home-cards">
-  <%= image_tag asset_path('home/desktop/value_section_splitter.svg'), class: 'homme-section-splitter' %>
+<div class="d-none d-md-block wrapper home-cards">
+  <div class="d-none d-md-block">
+    <%= image_tag asset_path('home/desktop/value_section_splitter.svg'), class: 'homme-section-splitter' %>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-4">
@@ -69,13 +71,64 @@
       </div> <!-- end of home-card -->
     </div>
   </div> <!-- end of value proposals -->
-</div>
+</div> <!-- end of desktop home cards -->
+
+<div id="carouselHomeCards" class="d-block d-md-none carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselHomeCards" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselHomeCards" data-slide-to="1"></li>
+    <li data-target="#carouselHomeCards" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class="home-card-mobile-container">
+          <div class="home-card home-card-mobile text-center">
+            <div class="proposal-icon">
+              <img src="https://static.thenounproject.com/png/1148410-200.png" alt="Euros">
+            </div>
+            <h3>Gagnez de l'argent</h3>
+            <p>Gagnez jusqu’à <span>3 000 € par an</span> en mettant en location votre véhicule ou votre remorque moto. <span>Econnomisez jusqu’à 20%</span> sur vos location en passant par la location de particuliers à particuliers</p>
+          </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="home-card-mobile-container">
+          <div class="home-card home-card-mobile text-center">
+            <div class="proposal-icon">
+              <img src="https://static.thenounproject.com/png/800605-200.png" alt="Moto locked">
+            </div>
+            <h3>Louez en sécurité</h3>
+            <p>L’équipe de Biky se mobilise pour trouver au plus vite une <span>Assurance</span>. Notre objectif est que toutes les locations passée via byki soit prris en charge par cette assurance. Ainsi vous serez sur d’être <span>couvert en toutes circonstances</span>.</p>
+          </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="home-card-mobile-container">
+          <div class="home-card home-card-mobile text-center">
+            <div class="proposal-icon">
+              <img src="https://static.thenounproject.com/png/540620-200.png" alt="Confiance">
+            </div>
+            <h3>Communauté</h3>
+            <p><span>Nous connaissons</span> chacun de <span>nos membres</span>. Comment ? <span>Nous vérifions</span> profils, avis, et pièces d'identité. Vous savez ainsi avec qui vous traitez.</p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselHomeCards" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselHomeCards" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> <!-- end of mobile home cards -->
+
 
 <div class="wrapper desktop_last-calltoaction">
   <%= image_tag asset_path('home/desktop/foot_shadows_desktop.svg'), class: 'foot_shadows_desktop' %>
   <div class="container">
     <div class="row">
-      <!-- <div class="col-xs-6"> -->
         <div class="desktop_calltoaction">
           <h2><span>Tu as un 2 roues, une remorque ?</span></h2>
           <p>Mets la en location sur byki et gagne jusqu’à 3 000€ par an soit 250€/mois</p>
@@ -83,12 +136,9 @@
             <%= link_to('Poster une annonce', new_user_session_path, class: 'btn btn-primary-biky')  %>
           </div>
         </div>
-      <!-- </div> -->
-      <!-- <div class="col-xs-6"> -->
         <div class="home_key-logo-container d-none d-md-block">
           <%= image_tag asset_path('home/key.svg'), alt: 'key', class: 'home_key-logo' %>
         </div>
-      <!-- </div> -->
     </div>
   </div>
 </div>

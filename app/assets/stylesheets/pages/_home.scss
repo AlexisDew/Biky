@@ -141,20 +141,13 @@
   z-index: -1;
 }
 
-// .home-section-splitter {
-//   position: relative;
-//   height: 100%;
-//   img {
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//   }
-// }
-
 .home-cards {
   position: relative;
   overflow: hidden;
   margin-top: 100px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
   span {
     color: $blue-biky;
     font-weight: bold;
@@ -167,7 +160,22 @@
   background-color: $white-biky;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
+  margin-bottom: 24px;
 }
+
+.home-card-mobile-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin: 64px 0;
+}
+
+.home-card-mobile {
+  max-width: 400px;
+  min-height: 464px;
+  margin: 0 12px;
+}
+
 
 .desktop_last-calltoaction {
   overflow: hidden;
@@ -200,47 +208,6 @@
   padding-left: 10vw;
 }
 
-// .insurance-container {
-//   margin-top: 24px;
-// }
-
-// .insurance-tag {
-//   display: flex;
-//   align-items: center;
-//   padding: 8px;
-//   background: $white-biky;
-//   position: absolute;
-//   border-radius: 10px;
-//   width: 248px;
-//   height: 64px;
-//   left: calc(100vw/2 - 248px/2);
-//   top: calc(100vh - 64px);
-//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-//   img {
-//     width: 48px;
-//     height: 48px;
-//   }
-//   p {
-//     margin: 0;
-//     padding-left: 8px;
-//     font-style: italic;
-//     font-weight: 200;
-//     line-height: normal;
-//     color: $gray-3-biky;
-//     font-size: 14px;
-//   }
-// }
-
-// .proposal {
-//   margin-bottom: 56px;
-//   margin-top: 56px;
-//   text-align: center;
-//   span {
-//     color: $blue-biky;
-//     font-weight: bold;
-//   }
-// }
-
 .proposal-icon {
   display: inline-block;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
@@ -255,88 +222,3 @@
     width: 60%;
   }
 }
-// /////////////////////////
-// .homepage_logo_image {
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   max-height: calc(100vh + (100vh * 63 / 900 ) );
-//   max-width: 65vw;
-//   z-index: -1;
-// }
-
-// .biky-description {
-//   margin-top: 15vh;
-//   height: 70vh;
-//   margin-bottom: 15vh;
-//
-//   display: flex;
-//   align-items: center;
-// }
-
-// .biky-description {
-//   p {
-//     margin-top: 32px;
-//     margin-bottom: 32px
-//   }
-//   span {
-//     color: $blue-biky;
-//   }
-// }
-
-// .homepage_buttons {
-//   display: flex;
-//   .btn-primary-biky {
-//     margin-right: 16px;
-//   }
-//   .btn {
-//     width: 168px;
-//   }
-// }
-
-// .homepage_logo_image_mobile {
-//   position: absolute;
-//   top: 20% ;
-//   height: 60%;
-// }
-
-// .mobile-banner {
-//   position: relative;
-// }
-
-// .homepage_helmet {
-//   position: relative;
-//   display: flex;
-//   align-items: center;
-//   padding: 0;
-//   height: 512px;
-// }
-
-// @media screen and (max-width: 768px) {
-//   .homepage_helmet {
-//     background-image: url(home/homepage_helmet_mobile.svg);
-//     background-size: cover;
-//     background-position: top;
-//   }
-// }
-
-// .homepage_helmet_mobile {
-//   position: absolute;
-//   z-index: -1;
-// }
-
-// .location_reason {
-//   margin: 56px 0;
-// }
-
-// .logo-large {
-//   position: absolute;
-//   width: 35vw;
-//   top: 35vh;
-//   right: 10%;
-// }
-
-// .helmet {
-//   position: absolute;
-//   right: 50vw;
-// }
