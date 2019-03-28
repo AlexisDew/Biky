@@ -1,5 +1,5 @@
 .btn-primary-biky {
-  background-color: $blue-2-biky;
+  background-color: $blue-biky;
   color: $white-biky;
 }
 
@@ -10,11 +10,12 @@
 
 .btn-secondary-biky {
   background-color: $white-biky;
-  border: 1px solid $blue-2-biky;
-  color: $blue-2-biky;
+  border: 1px solid $blue-biky;
+  color: $blue-biky;
 }
 
 .btn-secondary-biky:hover {
-  background-color: #E6F0FF;
-  color: $blue-2-biky;
+  background-color: $blue-5-biky;
+  border: 1px solid $blue-5-biky;
+  color: $white-biky;
 }

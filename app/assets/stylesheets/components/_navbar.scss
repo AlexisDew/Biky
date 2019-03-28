@@ -1,0 +1,38 @@
+.navbar {
+  z-index: 100;
+  position: absolute;
+  width: 100vw;
+  padding: 0;
+  background-color: $blue-4-biky;
+  box-shadow: 0px 4px 4px rgba(0, 28, 69, 0.5);
+}
+
+.mobile-navbar {
+  height: 40px;
+}
+
+.desktop-navbar {
+  height: 86px;
+}
+
+.desktop-menu {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  ul {
+    margin-bottom: 0;
+  }
+  a {
+    color: $white-biky;
+  }
+}
+
+.mobile-menu {
+  position: absolute;
+  right: 16px;
+  .dropdown-toggle {
+      color: $white-biky;
+      font-size: 125%;
+   }
+}
