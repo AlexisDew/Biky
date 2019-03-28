@@ -15,6 +15,7 @@
 }
 
 .btn-secondary-biky:hover {
-  background-color: #E6F0FF;
-  color: $blue-biky;
+  background-color: $blue-5-biky;
+  border: 1px solid $blue-5-biky;
+  color: $white-biky;
 }

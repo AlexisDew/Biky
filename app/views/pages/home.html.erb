@@ -33,23 +33,65 @@
     </div>
   </div> <!-- end of the mobile Banner-->
 
+  <div class="home-section-separator">s</div> <!-- end of separator -->
 </div>
 
+<div class="wrapper home-cards">
+  <%= image_tag asset_path('home/desktop/value_section_splitter.svg'), class: 'homme-section-splitter' %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="home-card text-center">
+          <div class="proposal-icon">
+            <img src="https://static.thenounproject.com/png/1148410-200.png" alt="Euros">
+          </div>
+          <h3>Gagnez de l'argent</h3>
+          <p>Gagnez jusqu’à <span>3 000 € par an</span> en mettant en location votre véhicule ou votre remorque moto. <span>Econnomisez jusqu’à 20%</span> sur vos location en passant par la location de particuliers à particuliers</p>
+        </div>
+      </div> <!-- end of home-card -->
+      <div class="col-xs-12 col-md-4">
+        <div class="home-card text-center">
+          <div class="proposal-icon">
+            <img src="https://static.thenounproject.com/png/800605-200.png" alt="Moto locked">
+          </div>
+          <h3>Louez en sécurité</h3>
+          <p>L’équipe de Biky se mobilise pour trouver au plus vite une <span>Assurance</span>. Notre objectif est que toutes les locations passée via byki soit prris en charge par cette assurance. Ainsi vous serez sur d’être <span>couvert en toutes circonstances</span>.</p>
+        </div>
+      </div> <!-- end of home-card -->
+      <div class="col-xs-12 col-md-4">
+        <div class="home-card text-center">
+          <div class="proposal-icon">
+            <img src="https://static.thenounproject.com/png/540620-200.png" alt="Confiance">
+          </div>
+          <h3>Communauté</h3>
+          <p><span>Nous connaissons</span> chacun de <span>nos membres</span>. Comment ? <span>Nous vérifions</span> profils, avis, et pièces d'identité. Vous savez ainsi avec qui vous traitez.</p>
+        </div>
+      </div> <!-- end of home-card -->
+    </div>
+  </div> <!-- end of value proposals -->
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="wrapper desktop_last-calltoaction">
+  <%= image_tag asset_path('home/desktop/foot_shadows_desktop.svg'), class: 'foot_shadows_desktop' %>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-xs-6"> -->
+        <div class="desktop_calltoaction">
+          <h2><span>Tu as un 2 roues, une remorque ?</span></h2>
+          <p>Mets la en location sur byki et gagne jusqu’à 3 000€ par an soit 250€/mois</p>
+          <div class="buttons">
+            <%= link_to('Poster une annonce', new_user_session_path, class: 'btn btn-primary-biky')  %>
+          </div>
+        </div>
+      <!-- </div> -->
+      <!-- <div class="col-xs-6"> -->
+        <div class="home_key-logo-container d-none d-md-block">
+          <%= image_tag asset_path('home/key.svg'), alt: 'key', class: 'home_key-logo' %>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
 
 
 
