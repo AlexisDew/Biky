@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2019_03_21_162219) do
   create_table "models", force: :cascade do |t|
     t.string "name"
     t.integer "year"
-    t.integer "integer"
     t.integer "engine_size"
     t.integer "power"
     t.bigint "brand_id"
