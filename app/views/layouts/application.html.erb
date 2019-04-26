@@ -11,11 +11,15 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' %>
     <% if devise_controller? %>
         <%= render 'layouts/devise' %>
     <% else %>
+      <div class='content'>
         <%= yield %>
+      </div>
     <% end %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

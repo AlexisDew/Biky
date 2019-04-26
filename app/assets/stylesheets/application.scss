@@ -20,6 +20,10 @@
 // Used in many pages
 body {
   background-color: $white-biky;
+  .content {
+    padding-top: 86px;
+    min-height: calc(100vh - 94px);
+  }
 }
 
 .row {
