@@ -10,6 +10,7 @@
   padding-top: 86px;
   color: $white-biky;
   height: 100vh;
+  min-height: 700px;
   background-image: url(home/desktop/banner.svg);
   background-size: cover;
   background-position: left bottom;
@@ -19,7 +20,7 @@
   position: absolute;
   top: 0;
   padding-top: 170px;
-  height: 100vh;
+  height: 100%;
   width: calc(100vw * 700/1440);
   display: flex;
   justify-content: center;
@@ -28,7 +29,7 @@
 .logo_banner_desktop {
   height: 50%;
   max-height: 300px;
-  padding-bottom: 86px;
+  // padding-bottom: 86px;
 }
 
 .head_shadows_desktop {
