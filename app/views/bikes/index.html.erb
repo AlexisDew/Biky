@@ -1,2 +1,7 @@
 <h1>Liste des motos (Bikes#Index)</h1>
 
+<% @bikes.each do |bike| %>
+  <h2><%= bike.model.name %></h2>
+  <p><%= bike.color %></p>
+  <p><%= bike.city.name %></p>
+<% end %>
