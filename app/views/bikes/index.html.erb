@@ -1,3 +1,5 @@
+<%= render 'shared/navbar' %>
+
 <h1>Liste des motos (Bikes#Index)</h1>
 
 <% @bikes.each do |bike| %>
@@ -5,3 +7,5 @@
   <p><%= bike.color %></p>
   <p><%= bike.city.name %></p>
 <% end %>
+
+<%= render 'shared/footer' %>
