@@ -1,5 +1,19 @@
 <%= render 'shared/navbar' %>
 
+<div class="search-bar">
+  <%= form_tag bikes_path, method: :get do %>
+    <%= text_field_tag :city,
+      params[:city],
+      class: "form-control",
+      placeholder: "D'où partez-vous?"
+    %>
+  <% end %>
+</div>
+
+
+<br>
+<br>
+_______________________________
 <h1>Liste des motos (Bikes#Index)</h1>
 
 <% @bikes.each do |bike| %>
@@ -7,5 +21,9 @@
   <p><%= bike.color %></p>
   <p><%= bike.city.name %></p>
 <% end %>
+
+
+
+
 
 <%= render 'shared/footer' %>

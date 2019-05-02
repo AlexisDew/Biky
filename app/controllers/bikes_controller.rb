@@ -4,7 +4,12 @@ class BikesController < ApplicationController
   before_action :find_bike, only: [:show]
 
   def index
-    @bikes = Bike.all
+    if params[:city].present?
+      city_id = City.where(name: params[:city].capitalize)
+      @bikes = Bike.where(city: city_id)
+    else
+      @bikes = Bike.all
+    end
   end
 
   def show
