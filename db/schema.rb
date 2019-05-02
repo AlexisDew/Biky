@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_162219) do
+ActiveRecord::Schema.define(version: 2019_05_02_085017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 2019_03_21_162219) do
     t.index ["city_id"], name: "index_bikes_on_city_id"
     t.index ["model_id"], name: "index_bikes_on_model_id"
     t.index ["owner_id"], name: "index_bikes_on_owner_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "user_id"
+    t.bigint "bike_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bike_id"], name: "index_bookings_on_bike_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "brands", force: :cascade do |t|
@@ -113,6 +124,8 @@ ActiveRecord::Schema.define(version: 2019_03_21_162219) do
   add_foreign_key "bikes", "cities"
   add_foreign_key "bikes", "models"
   add_foreign_key "bikes", "users", column: "owner_id"
+  add_foreign_key "bookings", "bikes"
+  add_foreign_key "bookings", "users"
   add_foreign_key "models", "brands"
   add_foreign_key "reviews", "users", column: "author_id"
   add_foreign_key "reviews", "users", column: "destinator_id"
