@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_085017) do
+ActiveRecord::Schema.define(version: 2019_05_02_115220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availability_validators", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bike_equipments", force: :cascade do |t|
     t.bigint "bike_id"
@@ -31,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_05_02_085017) do
     t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bookings_count", default: 0, null: false
     t.index ["city_id"], name: "index_bikes_on_city_id"
     t.index ["model_id"], name: "index_bikes_on_model_id"
     t.index ["owner_id"], name: "index_bikes_on_owner_id"
