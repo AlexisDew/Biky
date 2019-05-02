@@ -6,9 +6,11 @@ class BikesController < ApplicationController
   def index
     if params[:city].present?
       city_id = City.where(name: params[:city].capitalize)
-      @bikes = Bike.where(city: city_id)
+      bikes = Bike.where(city: city_id)
+      check_availability(bikes)
     else
-      @bikes = Bike.all
+      bikes = Bike.all
+      check_availability(bikes)
     end
   end
 
@@ -39,6 +41,13 @@ class BikesController < ApplicationController
   end
 
   private
+
+  def check_availability(bikes)
+    @bikes = []
+    bikes.each do |bike|
+      @bikes << bike if bike.available?(start_date: params[:start_date], end_date: params[:end_date])
+    end
+  end
 
   def find_bike
     @bike = Bike.find(params[:id])

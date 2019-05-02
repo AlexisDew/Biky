@@ -7,19 +7,33 @@
       class: "form-control",
       placeholder: "D'où partez-vous?"
     %>
+
+    <%= text_field_tag :start_date,
+      params[:start_date],
+      class: "form-control",
+      placeholder: Date.today
+    %>
+    <%= text_field_tag :end_date,
+      params[:end_date],
+      class: "form-control",
+      placeholder: Date.today
+    %>
+
+<%= submit_tag "Search", class: "btn btn-primary button-home" %>
+
   <% end %>
 </div>
 
 
 <br>
 <br>
-_______________________________
 <h1>Liste des motos (Bikes#Index)</h1>
-
+_______________________________
 <% @bikes.each do |bike| %>
-  <h2><%= bike.model.name %></h2>
+  <h2><%= bike.model.brand.name %> - <%= bike.model.name %></h2>
   <p><%= bike.color %></p>
   <p><%= bike.city.name %></p>
+  <p><%= bike.unavailable_dates %></p>
 <% end %>
 
 
