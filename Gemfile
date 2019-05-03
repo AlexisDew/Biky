@@ -11,6 +11,8 @@ gem 'redis'
 
 gem 'pg_search'
 
+gem 'omniauth-facebook'
+
 gem 'rest-client', '~> 1.8'
 gem 'json'
 gem 'nokogiri', '~> 1.6', '>= 1.6.6.2'
