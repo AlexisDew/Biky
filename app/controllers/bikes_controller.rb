@@ -2,6 +2,7 @@ class BikesController < ApplicationController
   # skip_before_action :authenticate_user!, only: %i[index show] # [:index, :show]
   # authenticate use before showing bikes not in the first version
   before_action :find_bike, only: [:show]
+  # skip_before_action :authenticate_user!, only: [:index]
 
   def index
     if params[:city].present?
