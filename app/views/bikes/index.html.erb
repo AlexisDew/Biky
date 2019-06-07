@@ -31,9 +31,10 @@
 _______________________________
 <% @bikes.each do |bike| %>
   <h2><%= bike.model.brand.name %> - <%= bike.model.name %></h2>
-  <p><%= bike.color %></p>
-  <p><%= bike.city.name %></p>
-  <p><%= bike.unavailable_dates %></p>
+  <p>color: <%= bike.color %></p>
+  <p>id: <%= bike.id %></p>
+  <p>city: <%= bike.city.name %></p>
+  <p>unavailable_dates:<%= bike.unavailable_dates %></p>
 <% end %>
 
 
