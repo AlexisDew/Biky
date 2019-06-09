@@ -1,4 +1,4 @@
-
+<% render 'shared/navbar' %>
 
 <div class="homepage_wrapper">
   <div class="desktop-banner d-none d-md-block">
@@ -12,8 +12,8 @@
         <h2><span>LOUER FACILEMENT</span><br>Moto, Remorque, Scooter...</h2>
         <p>Premier site de location de 2 roues entre particuliers</p>
         <div class="buttons">
-          <%= link_to('Poster une annonce', new_user_session_path, class: 'btn btn-primary-biky')  %>
-          <%= link_to('Louer un 2 roues', bikes_path, class: 'btn btn-secondary-biky')  %>
+          <%= link_to('Poster une annonce', construction_path, class: 'btn btn-primary-biky')  %>
+          <%= link_to('Louer un 2 roues', construction_path, class: 'btn btn-secondary-biky')  %>
         </div>
       </div>
     </div>
@@ -25,9 +25,9 @@
         <h2><span>LOUER FACILEMENT</span><br>Moto, Remorque, Scooter...</h2>
         <p>Premier site de location de 2 roues entre particuliers</p>
         <div class="buttons text-center">
-          <%= link_to('Poster une annonce', new_user_session_path, class: 'btn btn-primary-biky')  %>
+          <%= link_to('Poster une annonce', construction_path, class: 'btn btn-primary-biky')  %>
           <br>
-          <%= link_to('Louer un 2 roues', bikes_path, class: 'btn btn-secondary-biky')  %>
+          <%= link_to('Louer un 2 roues', construction_path, class: 'btn btn-secondary-biky')  %>
         </div>
       </div>
     </div>
@@ -57,7 +57,7 @@
             <img src="https://static.thenounproject.com/png/800605-200.png" alt="Moto locked">
           </div>
           <h3>Louez en sécurité</h3>
-          <p>L’équipe de Biky se mobilise pour trouver au plus vite une <span>Assurance</span>. Notre objectif est que toutes les locations passée via byki soit prises en charge par cette assurance. Ainsi vous serez sur d’être <span>couvert en toutes circonstances</span>.</p>
+          <p>L’équipe de Biky se mobilise pour trouver au plus vite une <span>Assurance</span>. Notre objectif est que toutes les locations passée via biky soit prises en charge par cette assurance. Ainsi vous serez sur d’être <span>couvert en toutes circonstances</span>.</p>
         </div>
       </div> <!-- end of home-card -->
       <div class="col-xs-12 col-md-4">
@@ -98,7 +98,7 @@
               <img src="https://static.thenounproject.com/png/800605-200.png" alt="Moto locked">
             </div>
             <h3>Louez en sécurité</h3>
-            <p>L’équipe de Biky se mobilise pour trouver au plus vite une <span>Assurance</span>. Notre objectif est que toutes les locations passée via byki soit prris en charge par cette assurance. Ainsi vous serez sur d’être <span>couvert en toutes circonstances</span>.</p>
+            <p>L’équipe de Biky se mobilise pour trouver au plus vite une <span>Assurance</span>. Notre objectif est que toutes les locations passée via biky soit prris en charge par cette assurance. Ainsi vous serez sur d’être <span>couvert en toutes circonstances</span>.</p>
           </div>
         </div>
     </div>
@@ -126,14 +126,13 @@
 
 
 <div class="wrapper desktop_last-calltoaction">
-  <%= image_tag asset_path('home/desktop/foot_shadows_desktop.svg'), class: 'foot_shadows_desktop' %>
   <div class="container">
     <div class="row">
         <div class="desktop_calltoaction">
           <h2><span>Tu as un 2 roues, une remorque ?</span></h2>
-          <p>Mets la en location sur byki et gagne jusqu’à 3 000€ par an en moyenne soit 250€/mois</p>
+          <p>Mets la en location sur Biky et gagne jusqu’à 3 000€ par an en moyenne soit 250€/mois</p>
           <div class="buttons">
-            <%= link_to('Poster une annonce', new_user_session_path, class: 'btn btn-primary-biky')  %>
+            <%= link_to('Poster une annonce', construction_path, class: 'btn btn-primary-biky')  %>
           </div>
         </div>
         <div class="home_key-logo-container d-none d-md-block">
@@ -141,6 +140,7 @@
         </div>
     </div>
   </div>
+  <%= image_tag asset_path('home/desktop/foot_shadows_desktop.svg'), class: 'foot_shadows_desktop' %>
 </div>
 
 <%= render 'shared/footer' %>
