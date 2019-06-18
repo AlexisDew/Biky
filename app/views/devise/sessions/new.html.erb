@@ -1,6 +1,21 @@
 <%= render "devise/shared/links" %>
 
 <h2>Connectez-vous à votre compte</h2>
+<br>
+
+<div>
+  <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <div class="form-actions text-center">
+        <%= link_to omniauth_authorize_path(resource_name, provider), :title => "Sign in with #{provider.to_s.titleize}" do %>
+        <%= image_tag "omniauth/oauth_#{provider}.png", :alt => "Sign in with #{provider.to_s.titleize}", class: 'oauth_icon'%><% end -%>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<br>
+<p class='text-center'>Ou</p>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -19,15 +34,8 @@
   </div>
 <% end %>
 
+
 <div class='text-center'>
   <br>
   <p class='thin smallest'>Vous n'avez pas encore de compte sur Biky ? <%= link_to('Créer un compte', new_registration_path(resource_name))  %></p>
 </div>
-
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <div class="form-actions text-center">
-      <%= link_to "Se connecter avec #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: 'btn btn-primary-biky'  %>
-    </div>
-  <% end %>
-<% end %>
