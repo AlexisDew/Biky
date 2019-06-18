@@ -3,18 +3,18 @@
 <h2>Connectez-vous à votre compte</h2>
 <br>
 
-<div>
+<div class='text-center'>
   <%- if devise_mapping.omniauthable? %>
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <div class="form-actions text-center">
-        <%= link_to omniauth_authorize_path(resource_name, provider), :title => "Sign in with #{provider.to_s.titleize}" do %>
+    <ul class="list-inline">
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <li class="list-inline-item"><%= link_to omniauth_authorize_path(resource_name, provider), :title => "Sign in with #{provider.to_s.titleize}" do %>
         <%= image_tag "omniauth/oauth_#{provider}.png", :alt => "Sign in with #{provider.to_s.titleize}", class: 'oauth_icon'%><% end -%>
-      </div>
-    <% end %>
+        </li>
+      <% end %>
+    </ul>
   <% end %>
 </div>
 
-<br>
 <p class='text-center'>Ou</p>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
