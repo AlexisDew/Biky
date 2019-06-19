@@ -12,7 +12,7 @@ gem 'redis'
 gem 'pg_search'
 
 gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
+# gem 'omniauth-google-oauth2'
 
 gem 'rest-client', '~> 1.8'
 gem 'json'
