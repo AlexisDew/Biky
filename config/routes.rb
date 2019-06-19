@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get  'construction', to: 'pages#construction', as: :construction
   get  'cgu', to: 'pages#cgu', as: :cgu
+  get  'confidentialite', to: 'pages#confidentialite', as: :confidentialite
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
