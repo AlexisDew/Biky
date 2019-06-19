@@ -1,20 +1,20 @@
-.footer {
-  background: $blue-4-biky;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 86px;
-  padding: 0px 50px;
-  color: $white-biky;
-  font-weight: 100;
-  box-shadow: 0px -4px 4px rgba(0, 28, 69, 0.5);
-}
+// .footer {
+//   background: $white-biky;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   // height: 86px;
+//   padding: 10px 50px 60px 50px;
+//   color: $blue-4-biky;
+//   // font-weight: 100;
+//   box-shadow: 0px -4px 4px rgba(0, 28, 69, 0.5);
+// }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: $white-biky;
+  color: $blue-4-biky;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -24,4 +24,46 @@
 }
 .footer .fa-heart {
   color: $red;
+}
+
+.footer-wrapper {
+  background-color: $white-biky;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  color: $blue-4-biky;
+}
+
+.shadow-footer {
+  padding: 15px;
+  box-shadow: 0px -4px 4px rgba(0, 28, 69, 0.5);
+}
+
+.legal-footer {
+  border-top: 1px solid $gray-biky;
+  margin-bottom: 0;
+  bottom: 0;
+  display: flex;
+  width:  calc(100% - 75px);
+  justify-content: space-between;
+  bottom: 0;
+  left: 15px;
+  margin: 0 24px;
+  padding: 0px 16px;
+  .smallest {
+    padding-top: 16px;
+  }
+}
+
+.legal-footer-copyright {
+  width: 40%;
+}
+
+.legal-footer-links {
+  width: 60%;
+}
+
+
+.logo-biky-footer {
+  width: 100%;
 }

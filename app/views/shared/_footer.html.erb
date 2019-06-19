@@ -1,13 +1,23 @@
-<div class="footer">
-  <div class="footer-links">
-    Nous suivre :
-    <!-- <a href="#" target="blank"><i class="fab fa-github"></i></a> -->
-    <a href="https://www.instagram.com/biky_loc/" target="blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/Biky-2386750511561616/" target="blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://twitter.com/biky_loc" target="blank"><i class="fab fa-twitter"></i></a>
-    <!-- <a href="#" target="blank"><i class="fab fa-linkedin"></i></a> -->
+<div class="legal-footer">
+  <% unless devise_controller? %>
+    <div class="footer-links">
+      <!-- <a href="#" target="blank"><i class="fab fa-github"></i></a> -->
+      <a href="https://www.instagram.com/biky_loc/" target="blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/Biky-2386750511561616/" target="blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com/biky_loc" target="blank"><i class="fab fa-twitter"></i></a>
+      <!-- <a href="#" target="blank"><i class="fab fa-linkedin"></i></a> -->
+    </div>
+  <% end %>
+
+  <div class="legal-footer-copyright thin smallest">
+    © Biky 2019 - Tous droits réservés
   </div>
-  <!-- <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Biky
-  </div> -->
+
+  <div class="legal-footer-links smallest text-right">
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">CGU</a></li>
+      <li class="list-inline-item"><a href="#">Politique de confidentialité</a></li>
+    </ul>
+  </div>
+
 </div>

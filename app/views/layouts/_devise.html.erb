@@ -8,16 +8,8 @@
       <div class="authentication-form">
         <%= yield %>
       </div>
-      <div class="authentication-footer">
-        <div class="authentication-footer-copyright thin smallest">
-          © Biky 2019 - Tous droits réservés
-        </div>
-        <div class="authentication-footer-links smallest text-right">
-          <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">CGU</a></li>
-            <li class="list-inline-item"><a href="#">Politique de confidentialité</a></li>
-          </ul>
-        </div>
+      <div class="footer-wrapper">
+        <%= render 'shared/footer' %>
       </div>
     </div>
     <div class="d-none d-md-block col-md-6 banner banner-authentication-image">
