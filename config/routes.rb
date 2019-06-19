@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get  'construction', to: 'pages#construction', as: :construction
+  get  'cgu', to: 'pages#cgu', as: :cgu
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
