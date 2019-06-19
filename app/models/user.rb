@@ -2,20 +2,12 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
 
   has_many :bikes, through: :bookings
   has_many :bookings
 
   def self.find_for_facebook_oauth(auth)
-    find_for_oauth(auth)
-  end
-
-  def self.find_for_google_oauth(auth)
-    find_for_oauth(auth)
-  end
-
-  def find_for_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
     user_params[:facebook_picture_url] = auth.info.image
@@ -32,8 +24,17 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
       user.save
     end
-
     return user
   end
 
+  def self.from_omniauth_g(access_token)
+    data = access_token.info
+    user = User.where(email: data["email"]).first
+
+    # Uncomment the section below if you want users to be created if they don't exist
+    user ||= User.create(first_name: data["first_name"],
+                        email: data["email"],
+                        password: Devise.friendly_token[0, 20])
+    user
+  end
 end
