@@ -111,7 +111,7 @@ GEM
     multipart-post (2.0.0)
     netrc (0.11.0)
     nio4r (2.3.1)
-    nokogiri (1.10.1)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     oauth2 (1.4.1)
       faraday (>= 0.8, < 0.16.0)
@@ -124,10 +124,6 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (5.0.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-google-oauth2 (0.7.0)
-      jwt (>= 2.0)
-      omniauth (>= 1.1.1)
-      omniauth-oauth2 (>= 1.5)
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
@@ -249,9 +245,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   json
   listen (~> 3.0.5)
-  nokogiri (~> 1.6, >= 1.6.6.2)
+  nokogiri (~> 1.10)
   omniauth-facebook
-  omniauth-google-oauth2
   pg (~> 0.21)
   pg_search
   pry-byebug
