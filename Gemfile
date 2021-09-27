@@ -16,7 +16,7 @@ gem 'omniauth-facebook'
 
 gem 'rest-client', '~> 1.8'
 gem 'json'
-gem 'nokogiri', '~> 1.6', '>= 1.6.6.2'
+gem 'nokogiri', '~> 1.12'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
