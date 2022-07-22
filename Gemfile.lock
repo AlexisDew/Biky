@@ -124,10 +124,6 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (5.0.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-google-oauth2 (0.7.0)
-      jwt (>= 2.0)
-      omniauth (>= 1.1.1)
-      omniauth-oauth2 (>= 1.5)
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
@@ -213,7 +209,7 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
@@ -251,7 +247,6 @@ DEPENDENCIES
   listen (~> 3.0.5)
   nokogiri (~> 1.6, >= 1.6.6.2)
   omniauth-facebook
-  omniauth-google-oauth2
   pg (~> 0.21)
   pg_search
   pry-byebug
